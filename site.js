@@ -52,8 +52,6 @@ const works = [
     category: 'Charcoal · 04',
     cover: 'chaosiland-close',
     images: [
-      ['chaosiland-main', 'Framed full view of Chaosiland'],
-      ['chaosiland-far', 'Installation view of Chaosiland from a distance'],
       ['chaosiland-mid-range', 'Mid-range view of Chaosiland'],
       ['chaosiland-mid-close', 'Closer view of the marks in Chaosiland'],
       ['chaosiland-close', 'Close-up of the charcoal marks in Chaosiland']
@@ -69,7 +67,7 @@ const works = [
 const variants = [
   { id: 1, name: 'Symmetric', cover: 'laminart-1-close', far: 'laminart-1-far', close: 'laminart-1-close' },
   { id: 2, name: 'Thin', cover: 'laminart-2-close', far: 'laminart-2-far', close: 'laminart-2-close' },
-  { id: 3, name: 'Mid thin', cover: 'laminart-3-close', far: 'laminart-3-far', close: 'laminart-3-close' },
+  { id: 3, name: 'Mid thin', cover: 'laminart-3-close', far: 'laminart-3-far', close: 'laminart-3-close', soldOut: true },
   { id: 4, name: 'Mid large', cover: 'laminart-4-close', far: 'laminart-4-far', close: 'laminart-4-close' },
   { id: 5, name: 'Large', cover: 'laminart-5-close', far: 'laminart-5-far', close: 'laminart-5-close' }
 ];
@@ -90,7 +88,7 @@ if (document.body.dataset.page === 'home') {
   works.forEach(work => grid.append(makeCard({ ...work, workId: work.id })));
   variants.forEach(variant => grid.append(makeCard({
     title: `LaminART — ${variant.name}`,
-    category: `LaminART · variation 0${variant.id}`,
+    category: `LaminART · variation 0${variant.id}${variant.soldOut ? ' · Sold out' : ''}`,
     cover: variant.cover,
     href: `laminart.html#variant-${variant.id}`
   })));
@@ -159,7 +157,7 @@ if (document.body.dataset.page === 'laminart') {
       tab.tabIndex = selected ? 0 : -1;
     });
     panel.setAttribute('aria-labelledby', `variant-tab-${variant.id}`);
-    panel.innerHTML = `<figure class="variant-main-image"><img src="${image(variant.far)}" alt="LaminART ${variant.name}, full installation view"><figcaption>Full view · ${variant.name}</figcaption></figure><figure class="variant-detail-image"><img src="${image(variant.close)}" alt="Close view of LaminART ${variant.name}"><figcaption>Surface detail · ${variant.name}</figcaption></figure><div class="variant-copy"><p class="eyebrow">Variation 0${variant.id} / 05</p><h2>${variant.name}</h2><p>One of five related LaminART works, shown here through its full view and a closer look at the surface.</p></div>`;
+    panel.innerHTML = `<figure class="variant-main-image"><img src="${image(variant.far)}" alt="LaminART ${variant.name}, full installation view"><figcaption>Full view · ${variant.name}</figcaption></figure><figure class="variant-detail-image"><img src="${image(variant.close)}" alt="Close view of LaminART ${variant.name}"><figcaption>Surface detail · ${variant.name}</figcaption></figure><div class="variant-copy"><p class="eyebrow">Variation 0${variant.id} / 05${variant.soldOut ? ' · Sold out' : ''}</p><h2>${variant.name}</h2><p>One of five related LaminART works, shown here through its full view and a closer look at the surface.</p></div>`;
     if (updateHash) history.replaceState(null, '', `#variant-${variant.id}`);
   }
 
