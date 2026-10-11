@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The artwork of Klaus Tenorio: material, surface, order and disorder.">
+  <meta name="theme-color" content="#f8f7f4">
+  <title>Klaus Tenorio — Art Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="site.js"></script>
+</head>
+<body data-page="home">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="Klaus Tenorio, home">Klaus Tenorio<span class="brand-dot">.</span></a>
+    <nav aria-label="Main navigation">
+      <a class="current" href="#work">Work</a>
+      <a href="laminart.html">LaminART</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="intro wrap" aria-labelledby="intro-title">
+      <p class="eyebrow">Selected work · Rotterdam</p>
+      <h1 id="intro-title">Order, disorder,<br><em>and everything between.</em></h1>
+      <p class="intro-copy">Sculptural surfaces shaped by earth, sand, charcoal, gypsum, and chance. Explore the works below.</p>
+    </section>
+
+    <section class="work-section wrap" id="work" aria-labelledby="work-title">
+      <div class="section-heading"><h2 id="work-title">Works</h2><span>01 — 09</span></div>
+      <div class="work-grid" id="work-grid"></div>
+    </section>
+
+    <section class="about-section" id="about" aria-labelledby="about-title">
+      <div class="wrap about-grid">
+        <figure class="about-image"><img src="assets/images/artist.webp" alt="Klaus Tenorio working on a painting at an outdoor art fair" loading="lazy"><figcaption>Photograph by Anthony Vecchioni, Gold Coast Art Fair, Chicago, 2025.</figcaption></figure>
+        <div class="about-content">
+          <p class="eyebrow">About the artist</p>
+          <h2 id="about-title">Material as an active force.</h2>
+          <p>My practice investigates the delicate balance between order and disorder. Drawing from formative mentorship under Venezuelan painter Darío Basso at his atelier in Vigo, Spain, I treat raw matter—earth, sand, sawdust, gypsum, and charcoal—as active agents of unpredictability.</p>
+          <p>I introduce chaos into the composition, synthesizing these abrasive materials with the controlled boundaries of adhesives. Heavy accretions, fractures, and erratic charcoal trajectories create their own disruptive topographies.</p>
+          <p>Light, shadow, and the viewer’s reflection continuously reconstitute surfaces born from the intersection of structural intent and raw, unyielding chaos.</p>
+          <p class="about-note">Klaus has Hispanic roots and works as a PhD researcher. Based in Noordereiland, Rotterdam.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer wrap" id="contact">
+    <div><p class="eyebrow">Get in touch</p><h2>Let’s talk about art.</h2></div>
+    <a class="footer-link" href="https://github.com/art-klaus" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+    <p class="footer-bottom">© <span id="year"></span> Klaus Tenorio</p>
+  </footer>
+
+  <dialog class="work-dialog" id="work-dialog" aria-label="Artwork details">
+    <button class="dialog-close" id="dialog-close" type="button" aria-label="Close artwork details">×</button>
+    <div class="dialog-layout">
+      <div class="dialog-gallery">
+        <div class="dialog-stage"><img id="dialog-image" alt=""></div>
+        <div class="dialog-controls">
+          <button id="image-prev" type="button" aria-label="Previous image">←</button>
+          <span id="image-count" aria-live="polite"></span>
+          <button id="image-next" type="button" aria-label="Next image">→</button>
+        </div>
+      </div>
+      <div class="dialog-copy">
+        <p class="eyebrow" id="dialog-kicker"></p>
+        <h2 id="dialog-title"></h2>
+        <div id="dialog-description"></div>
+        <p class="dialog-meta" id="dialog-meta"></p>
+      </div>
+    </div>
+  </dialog>
+</body>
+</html>
